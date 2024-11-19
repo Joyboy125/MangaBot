@@ -433,9 +433,11 @@ async def send_manga_chapter(client: Client, chapter, chat_id):
         except Exception as e:
             print(e)
     else:
-        ch_name = clean(f'{chapter.name} - {clean(chapter.manga.name, 25)}', 45)
+        ch_name = clean(f'{chapter.name} - {clean(chapter.manga.name)}')
         
-    success_caption = f"{ch_name}\n [Read on website]({chapter.get_url()})"
+    success_caption = f"<blockquote><b>{ch_name}\n➤ @Manhwa_University</b></blockquote>"
+    success_caption = re.sub(r'(\d+)', lambda x: f"{int(x.group()):03}", success_caption, count=1)
+    ch_name = re.sub(r'(\d+)', lambda x: f"{int(x.group()):03}", ch_name, count=1)
 
     media_docs = []
 
