@@ -56,6 +56,8 @@ def unicode_to_latin1(s):
 
 def img2pdf(files: List[Path], out: Path):
     pdf = FPDF('P', 'pt')
+    pdf.add_page(format=(718, 718))  
+    pdf.image("thumbnail.jpg")
     for imageFile in files:
         img_bytes, width, height = pil_image(imageFile)
         
@@ -66,6 +68,8 @@ def img2pdf(files: List[Path], out: Path):
         img_bytes.close()
 
     pdf.set_title(unicode_to_latin1(out.stem))
+    pdf.add_page(format=(1111, 628))  
+    pdf.image("last_pic.png")
     pdf.output(out, "F")
 
 
