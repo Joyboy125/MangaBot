@@ -435,7 +435,7 @@ async def send_manga_chapter(client: Client, chapter, chat_id):
     else:
         ch_name = (f'{chapter.name} - {(chapter.manga.name)}')
         
-    success_caption = f"<blockquote><b>{ch_name}\n➤ @Manhwa_University</b></blockquote>"
+    success_caption = f"<blockquote><b>{ch_name}\n➤ @Manhwa_Realms</b></blockquote>"
     success_caption = re.sub(r'(\d+)', lambda x: f"{int(x.group()):03}", success_caption, count=1)
     ch_name = re.sub(r'(\d+)', lambda x: f"{int(x.group()):03}", ch_name, count=1)
 

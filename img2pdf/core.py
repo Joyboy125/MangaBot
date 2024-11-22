@@ -69,7 +69,7 @@ def img2pdf(files: List[Path], out: Path):
 
     pdf.set_title(unicode_to_latin1(out.stem))
     pdf.add_page(format=(1111, 628))  
-    pdf.image("last_pic.png")
+    pdf.image("last_pic.jpg")
     pdf.output(out, "F")
 
 
