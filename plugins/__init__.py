@@ -1,5 +1,4 @@
 from .client import MangaClient, MangaCard, MangaChapter
-from .manhuako import ManhuaKoClient
 from .tmo import TMOClient
 from .mangadex import MangaDexClient
 from .mangasin import MangasInClient
